@@ -147,16 +147,16 @@ app.put('/api/v1/putPost', (req, res) => {
 
     const data = req.body
     const ID = req.body.id
-    console.log(data) //?
+    console.log(data) 
     loadFile()
         .then(data => {
             console.log(data)
             const index = data?.findIndex(item => item?.id == ID && typeof item?.Status == 'boolean' )
-            console.log(index) //?
-            if (index >= 0) { //?
+            console.log(index)
+            if (index >= 0) { 
                 /*                 data[index].Status = true  */
                 // * Togglen des Statuses von true auf false und false auf true
-                data[index].Status = !data[index].Status //?
+                data[index].Status = !data[index].Status 
 
                 // * {flag: 'w'}  damit die Datei überschrieben wird und nicht nur angehängt wird
                 fs.writeFile(DB_PATH, JSON.stringify(data, null, 2), { flag: 'w' }, (err) => {
