@@ -14,7 +14,7 @@ import { v4 as uuidv4 } from 'uuid' // zum generieren von UUIDs für Map oder Bi
 
 
 // *** import          files und funktionen
-import {  loadFile, saveFile, appendFile    } from './funktionen.js';
+import { loadFile, saveFile, appendFile } from './funktionen.js';
 
 
 
@@ -29,10 +29,12 @@ import {  loadFile, saveFile, appendFile    } from './funktionen.js';
 // ** durch .env ist PORT unleserlich und kann von außen verändert werden
 const PORT = process.env.PORT || 9998
 const app = express()
-const PORT_FRONTEND_REACT = process.env.PORT_FRONTEND_REACT || 3000    
+const PORT_FRONTEND_REACT = process.env.PORT_FRONTEND_REACT || 3000
 // * PORT vorn und hinten groß
 // * wenn auf server hochladen, dann VITE_ davor noch hin, 
 // * sonst weiß der server nicht, dass es eine Umgebungsvariable ist die er bauen soll
+
+const DB_PATH = process.env.DB_PATH || './db_Daten.json'
 
 
 
@@ -41,7 +43,7 @@ const PORT_FRONTEND_REACT = process.env.PORT_FRONTEND_REACT || 3000
  * * **** für Bilder
  * 
  *** ****************************************************************/
-const upload = multer ( {           // * beim FrontEnd content-type: multipart/form-data
+const upload = multer({           // * beim FrontEnd content-type: multipart/form-data
     storage: multer.memoryStorage(),      // zum filtern und auslesen der der Magic Bites 
     limits: { fileSize: 200000 }          // zum begrenzen der Dateigröße
 })
@@ -62,7 +64,7 @@ const BILD_FORMAT_3 = 'png'
 app.use(morgan('dev'))
 
 // **** CORS Sicherheit
-app.use(cors( { origin: `http://localhost:${PORT_FRONTEND_REACT}`})) 
+app.use(cors({ origin: `http://localhost:${PORT_FRONTEND_REACT}` }))
 
 // **** React HEAD BODY JSON Parser
 app.use(express.json())             // zum lesen von JSON Daten    
@@ -90,14 +92,15 @@ app.use('/images', express.static('./images'))
  *                      * bzw. neue Sachen einfach bei /api/v2 eingebunden werden und die alten Sachen noch gehen
  * 
  *** ****************************************************************/
-app.get('/api/v1/getPost' , (req, res) => {
+app.get('/api/v1/getPost', (req, res) => {
 
     loadFile()
-        .then( data => { res.json(data)})
+        .then(data => { res.json(data) })
 
-        .catch( err => { 
+        .catch(err => {
             res.status(599)
-            .json({ message: err.message })})
+                .json({ message: err.message })
+        })
 })
 
 
@@ -118,35 +121,61 @@ app.get('/api/v1/getPost' , (req, res) => {
  * 
  *** ****************************************************************/
 app.post('/api/v1/postPost', (req, res) => {
-    
+
     const data = req.body
 
     // ** jetzt ganze data in Datei schreiben
     appendFile(data)
-        .then(newData => { res.json(newData)})
-        .catch( err => { 
+        .then(newData => { res.json(newData) })
+        .catch(err => {
             res.status(591)
-            .json({message: err.message}) })
+                .json({ message: err.message })
+        })
 
 })
 
 
 /** ****************************************************************
  * 
- * * **** PUT          fetch
- *  ! sollte ID haben wenn er kommt, zwecks Detail Seite    Route :id und mit param 
- * 
+ * * **** PUT          fetch     sucht mit find() nach ID und überschreibt    
+ *                                * gibt nur ein Erbebnis zurück
+ *     findet den Post mit der ID   dann wird der Status von false auf true gesetzt  
+ *      dann wird es in der db_Daten.jsson Datei geändert und gespeichert 
+ *    und dann wird es zurückgegeben
  *** ****************************************************************/
 app.put('/api/v1/putPost', (req, res) => {
-    
-    const data = req.body
 
-    // ** jetzt ganze data in Datei schreiben
-    appendFile(data)
-        .then(newData => { res.json(newData)})
-        .catch( err => { 
-            res.status(592)
-            .json({message: err.message}) })
+    const data = req.body
+    const ID = req.body.id
+    console.log(data) //?
+    loadFile()
+        .then(data => {
+            console.log(data)
+            const index = data?.findIndex(item => item?.id == ID && typeof item?.Status == 'boolean' )
+            console.log(index) //?
+            if (index >= 0) { //?
+                /*                 data[index].Status = true  */
+                // * Togglen des Statuses von true auf false und false auf true
+                data[index].Status = !data[index].Status //?
+
+                // * {flag: 'w'}  damit die Datei überschrieben wird und nicht nur angehängt wird
+                fs.writeFile(DB_PATH, JSON.stringify(data, null, 2), { flag: 'w' }, (err) => {
+                    if (err) console.log(err)
+                })
+                res.json(data[index])
+            } else {
+                res.status(404)
+                    .json({ message: `Post mit ID ${ID} nicht gefunden bzw schon auf reserviert` })
+            }
+        })
+
+    /*     // ** jetzt ganze data in Datei schreiben
+        fs.saveFile(data) //?
+            .then(newData => { res.json(newData) })
+            .catch(err => {
+                res.status(592)
+                    .json({ message: err.message })
+            }) */
 
 })
 
@@ -167,5 +196,5 @@ app.put('/api/v1/putPost', (req, res) => {
  * 
  *** ****************************************************************/
 app.listen(PORT, () => {
-    console.log("Server läuft auf Port: " + PORT )
+    console.log("Server läuft auf Port: " + PORT)
 })
