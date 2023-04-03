@@ -14,7 +14,7 @@ import { v4 as uuidv4 } from 'uuid' // zum generieren von UUIDs für Map oder Bi
 
 
 // *** import          files und funktionen
-import {      } from './functions.js';
+import {  loadFile, saveFile, appendFile    } from './funktionen.js';
 
 
 
@@ -90,7 +90,15 @@ app.use('/images', express.static('./images'))
  *                      * bzw. neue Sachen einfach bei /api/v2 eingebunden werden und die alten Sachen noch gehen
  * 
  *** ****************************************************************/
+app.get('/api/v1/getPost' , (req, res) => {
 
+    loadFile()
+        .then( data => { res.json(data)})
+
+        .catch( err => { 
+            res.status(599)
+            .json({ message: err.message })})
+})
 
 
 
@@ -109,6 +117,38 @@ app.use('/images', express.static('./images'))
  *  ! sollte ID haben wenn er kommt, zwecks Detail Seite    Route :id und mit param 
  * 
  *** ****************************************************************/
+app.post('/api/v1/postPost', (req, res) => {
+    
+    const data = req.body
+
+    // ** jetzt ganze data in Datei schreiben
+    appendFile(data)
+        .then(newData => { res.json(newData)})
+        .catch( err => { 
+            res.status(591)
+            .json({message: err.message}) })
+
+})
+
+
+/** ****************************************************************
+ * 
+ * * **** PUT          fetch
+ *  ! sollte ID haben wenn er kommt, zwecks Detail Seite    Route :id und mit param 
+ * 
+ *** ****************************************************************/
+app.put('/api/v1/putPost', (req, res) => {
+    
+    const data = req.body
+
+    // ** jetzt ganze data in Datei schreiben
+    appendFile(data)
+        .then(newData => { res.json(newData)})
+        .catch( err => { 
+            res.status(592)
+            .json({message: err.message}) })
+
+})
 
 
 

@@ -3,9 +3,9 @@
  * * ************* imports
  * 
  *** ****************************************************************/
-import fs from 'fs';
+import './config.js';               // für die Umgebungsvariablen zum sichern Wegspeichern von Passwörtern API Keys etc.
+import fs, { writeFile } from 'fs';
 import { constants } from 'fs';      // für fs.access Prüfung
-import './db_Daten.json'
 
 const DB_PATH= process.env.DB_PATH || './db_Daten.js'
 
@@ -74,4 +74,3 @@ export const appendFile = (newPost) => {
     })
 }
 
-appendFile({id: 1, name: 'test'}) //?
