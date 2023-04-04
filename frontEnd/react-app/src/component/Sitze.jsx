@@ -16,14 +16,14 @@ export const Sitze = ({ item, setStatus }) => {
          /* setStatusToggle(!item.Status)  */
 
         /*    useEffect(() => { */
-       fetch('http://localhost:9999/api/v1/putPost', {
+       fetch('https://kino-backend.onrender.com/api/v1/putPost', { // https://kino-backend.onrender.com/api/v1/getPost
             method: 'PUT',
             headers: { 'Content-Type': 'application/json' },
             /*                 body: JSON.stringify(item)   */
             body: JSON.stringify({ id: item.Sitzplatznummer_ID })
         })
              .then(() => {
-             fetch('http://localhost:9999/api/v1/getEmail' )
+             fetch('https://kino-backend.onrender.com/api/v1/getEmail' )   // https://kino-backend.onrender.com/api/v1/getPost  http://localhost:9999/api/v1/getEmail
                     .then(res => res.json())
                     .then(data => {console.log(data) //?
                     setStatus(prev => !prev) })

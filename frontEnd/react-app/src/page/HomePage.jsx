@@ -12,7 +12,7 @@ export const HomePage = () => {
 
 
     useEffect(() => {
-        fetch('http://localhost:9999/api/v1/getPost')
+        fetch('https://kino-backend.onrender.com/api/v1/getPost')  // https://kino-backend.onrender.com/api/v1/getPost   http://localhost:9999/api/v1/getPost
             .then(res => res.json())
             .then(data => setSitze(data))
     }, [status])

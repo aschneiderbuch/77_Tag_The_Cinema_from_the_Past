@@ -152,6 +152,8 @@ app.use('/images', express.static('./images'))
  *                      * immer /api/v1/  damit es nicht mit anderen API's kollidiert  
  *                      * bzw. neue Sachen einfach bei /api/v2 eingebunden werden und die alten Sachen noch gehen
  * 
+ *                    * WebHosting mit www.render.com
+ * 
  *** ****************************************************************/
 app.get('/api/v1/getPost', (req, res) => {
 
