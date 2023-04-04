@@ -89,7 +89,7 @@ const transport = nodemailer.createTransport({
 app.use(morgan('dev'))
 
 // **** CORS Sicherheit
-app.use(cors(  { origin: `http://localhost:${PORT_FRONTEND_REACT}` }  ))  // https://kino-frontend.onrender.com/      http://localhost:
+app.use(cors(  /* { origin: `http://localhost:${PORT_FRONTEND_REACT}` }  */ ))  // https://kino-frontend.onrender.com/      http://localhost:
 
 // **** React HEAD BODY JSON Parser
 app.use(express.json())             // zum lesen von JSON Daten    
