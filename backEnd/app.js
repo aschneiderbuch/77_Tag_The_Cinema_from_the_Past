@@ -89,8 +89,8 @@ const transport = nodemailer.createTransport({
 app.use(morgan('dev'))
 
 // **** CORS Sicherheit
- app.use(cors({ origin: `http://localhost:${PORT_FRONTEND_REACT}` }))
- 
+app.use(cors({ origin: `http://localhost:${PORT_FRONTEND_REACT}` }))
+
 // **** React HEAD BODY JSON Parser
 app.use(express.json())             // zum lesen von JSON Daten    
 // * in FrontEnd     content-type: application/json
@@ -215,12 +215,16 @@ app.put('/api/v1/putPost', (req, res) => {
         .then(data => {
             console.log(data)
             const index = data?.findIndex(item => item?.id == ID && typeof item?.Status == 'boolean')
-            data[Number(ID)-1].Status = !data[Number(ID)-1].Status
+
+            // *! übers backEnd
+            // *! data[Number(ID)-1].Status = !data[Number(ID)-1].Status
             console.log(data)
             if (index >= 0) {
-                /*                 data[index].Status = true  */
+                // *!
+                data[index].Status = true
                 // * Togglen des Statuses von true auf false und false auf true
-              /*   data[index].Status = !data[index].Status */
+                // *!
+                data[index].Status = !data[index].Status
 
                 // * {flag: 'w'}  damit die Datei überschrieben wird und nicht nur angehängt wird
                 fs.writeFile(DB_PATH, JSON.stringify(data, null, 2),/*  { flag: 'w' },  */(err) => {

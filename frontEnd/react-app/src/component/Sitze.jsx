@@ -9,11 +9,12 @@ export const Sitze = ({ item, setStatus }) => {
      const [statusToggle, setStatusToggle] = useState(false)
  
     const handleClickStatusToggle = (e) => {
-
- /*        item.Status = !item.Status */
+        // *!
+      item.Status = !item.Status 
 
         /* setStatusToggle(!statusToggle)  */    // * hier löscht er nicht ab und an die db_Daten.json
-         /* setStatusToggle(!item.Status)  */
+        // *!  
+        setStatusToggle(!item.Status)  
 
         /*    useEffect(() => { */
        fetch('https://kino-backend.onrender.com/api/v1/putPost', { // https://kino-backend.onrender.com/api/v1/getPost
@@ -26,6 +27,7 @@ export const Sitze = ({ item, setStatus }) => {
              fetch('https://kino-backend.onrender.com/api/v1/getEmail' )   // https://kino-backend.onrender.com/api/v1/getPost  http://localhost:9999/api/v1/getEmail
                     .then(res => res.json())
                     .then(data => {console.log(data) //?
+                    // *! übers backEnd
                     setStatus(prev => !prev) })
             }) 
             .catch( err => console.log(err))
