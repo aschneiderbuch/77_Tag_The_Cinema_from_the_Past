@@ -1,0 +1,14 @@
+{
+  "files": {
+    "main.css": "/77_Tag_The_Cinema_from_the_Past/static/css/main.31d6cfe0.css",
+    "main.js": "/77_Tag_The_Cinema_from_the_Past/static/js/main.d7802d42.js",
+    "static/js/787.b701888c.chunk.js": "/77_Tag_The_Cinema_from_the_Past/static/js/787.b701888c.chunk.js",
+    "index.html": "/77_Tag_The_Cinema_from_the_Past/index.html",
+    "main.d7802d42.js.map": "/77_Tag_The_Cinema_from_the_Past/static/js/main.d7802d42.js.map",
+    "787.b701888c.chunk.js.map": "/77_Tag_The_Cinema_from_the_Past/static/js/787.b701888c.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.31d6cfe0.css",
+    "static/js/main.d7802d42.js"
+  ]
+}
