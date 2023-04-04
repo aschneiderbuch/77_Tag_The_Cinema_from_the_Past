@@ -19,7 +19,7 @@ function App() {
 
           <Route path='*'element={<HomePage> </HomePage>}> </Route>
 
-{/*           <Route path='*' element={<h1> 404 Seite nicht gefunden </h1>}> </Route> */}
+{/*   //        <Route path='*' element={<h1> 404 Seite nicht gefunden </h1>}> </Route> */}
         </Routes>
       </BrowserRouter>
 
