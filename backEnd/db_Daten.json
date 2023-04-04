@@ -4,21 +4,21 @@
     "Sitzplatznummer_ID": 1,
     "Klasse": "Loge",
     "Preis": 20,
-    "Status": true
+    "Status": false
   },
   {
     "id": 2,
     "Sitzplatznummer_ID": 2,
     "Klasse": "Loge",
     "Preis": 20,
-    "Status": true
+    "Status": false
   },
   {
     "id": 3,
     "Sitzplatznummer_ID": 3,
     "Klasse": "Loge",
     "Preis": 20,
-    "Status": true
+    "Status": false
   },
   {
     "id": 4,
@@ -32,7 +32,7 @@
     "Sitzplatznummer_ID": 5,
     "Klasse": "Loge",
     "Preis": 20,
-    "Status": true
+    "Status": false
   },
   {
     "id": 6,
@@ -74,7 +74,7 @@
     "Sitzplatznummer_ID": 11,
     "Klasse": "Loge",
     "Preis": 20,
-    "Status": true
+    "Status": false
   },
   {
     "id": 12,
