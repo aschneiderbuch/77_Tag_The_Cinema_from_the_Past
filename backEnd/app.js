@@ -36,7 +36,7 @@ const PORT_FRONTEND_REACT = process.env.PORT_FRONTEND_REACT || 3000
 // * wenn auf server hochladen, dann VITE_ davor noch hin, 
 // * sonst weiß der server nicht, dass es eine Umgebungsvariable ist die er bauen soll
 
-const DB_PATH = process.env.DB_PATH || './db_Daten.json'
+const DB_PATH = process.env.DB_PATH  //  || './db_Daten.json'
 
 
 
