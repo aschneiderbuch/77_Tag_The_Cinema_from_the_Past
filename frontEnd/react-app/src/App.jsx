@@ -17,8 +17,9 @@ function App() {
           <Route path='/admin' element={<AdminPage> </AdminPage>}></Route>
           <Route path='/detail/:id' element={<DetailPage> </DetailPage>} > </Route>
 
-          <Route path='*' element={<h1> 404 Seite nicht gefunden </h1>}> </Route>
+          <Route path='*'element={<HomePage> </HomePage>}> </Route>
 
+{/*           <Route path='*' element={<h1> 404 Seite nicht gefunden </h1>}> </Route> */}
         </Routes>
       </BrowserRouter>
 
