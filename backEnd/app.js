@@ -116,9 +116,9 @@ app.use('/images', express.static('./images'))
  *          * https://mailtrap.io/    Testing Dashboard
  * 
  *** ****************************************************************/
-// app.get('/api/v1/getEmail', (req, res) => {
-/*     console.log(req)
- */    // * Inhalt der Email
+/* app.get('/api/v1/getEmail', (req, res) => {
+//     console.log(req)
+    // * Inhalt der Email
     const message = {
         from: 'test_kino_email_versand@test_email.de',
         to: 'test_admin_email_empfang@test_admin_email.de',
@@ -137,7 +137,7 @@ app.use('/images', express.static('./images'))
             .res.end()  // * damit Thunder Client nicht nur 200 anzeigt 
     })
     
-// })
+ }) */
 
 
 
