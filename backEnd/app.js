@@ -116,7 +116,7 @@ app.use('/images', express.static('./images'))
  *          * https://mailtrap.io/    Testing Dashboard
  * 
  *** ****************************************************************/
-app.get('/api/v1/getEmail', (req, res) => {
+// app.get('/api/v1/getEmail', (req, res) => {
 /*     console.log(req)
  */    // * Inhalt der Email
     const message = {
@@ -137,7 +137,7 @@ app.get('/api/v1/getEmail', (req, res) => {
             .res.end()  // * damit Thunder Client nicht nur 200 anzeigt 
     })
     
-})
+// })
 
 
 
