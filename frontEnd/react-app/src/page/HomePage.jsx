@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react'
 import { Sitze } from '../component/Sitze'
+import { NavLink } from 'react-router-dom'
 
 
 
@@ -7,7 +8,7 @@ import { Sitze } from '../component/Sitze'
 
 export const HomePage = () => {
     const [sitze, setSitze] = useState([])
-    const [status, setStatus] = useState() //?
+    const [status, setStatus] = useState(false) //?
 
 
     useEffect(() => {
@@ -34,7 +35,7 @@ export const HomePage = () => {
                             color: 'purple',
                             width: item.Status === true ? '200px' : '40px'
                         }} */
-                        status={setStatus} //?
+                        setStatus={setStatus} //?
                         item={item} // * alles komplette Objekt durchschieben
 
                     >  </Sitze>
@@ -44,7 +45,7 @@ export const HomePage = () => {
 
 
 
-
+<NavLink to='/admin'> Admin Seite </NavLink>
 
 
 

@@ -89,8 +89,8 @@ const transport = nodemailer.createTransport({
 app.use(morgan('dev'))
 
 // **** CORS Sicherheit
-app.use(cors({ origin: `http://localhost:${PORT_FRONTEND_REACT}` }))
-
+ app.use(cors({ origin: `http://localhost:${PORT_FRONTEND_REACT}` }))
+ 
 // **** React HEAD BODY JSON Parser
 app.use(express.json())             // zum lesen von JSON Daten    
 // * in FrontEnd     content-type: application/json
@@ -117,7 +117,8 @@ app.use('/images', express.static('./images'))
  * 
  *** ****************************************************************/
 app.get('/api/v1/getEmail', (req, res) => {
-    // * Inhalt der Email
+/*     console.log(req)
+ */    // * Inhalt der Email
     const message = {
         from: 'test_kino_email_versand@test_email.de',
         to: 'test_admin_email_empfang@test_admin_email.de',
@@ -127,7 +128,7 @@ app.get('/api/v1/getEmail', (req, res) => {
     }
 
     // * Email senden
-    transport.sendMail(message, (err, info) => {
+     transport.sendMail(message, (err, info) => {
         if (err) res.status((595))
             .json({ Error__: err.message })
         else res.status(295)
@@ -135,6 +136,7 @@ app.get('/api/v1/getEmail', (req, res) => {
 
             .res.end()  // * damit Thunder Client nicht nur 200 anzeigt 
     })
+    
 })
 
 
@@ -206,19 +208,20 @@ app.put('/api/v1/putPost', (req, res) => {
 
     const data = req.body
     const ID = req.body.id
-    console.log(data)
-    loadFile()
+/*     console.log(data)
+ */    loadFile()
         .then(data => {
             console.log(data)
             const index = data?.findIndex(item => item?.id == ID && typeof item?.Status == 'boolean')
-            console.log(index)
+            data[Number(ID)-1].Status = !data[Number(ID)-1].Status
+            console.log(data)
             if (index >= 0) {
                 /*                 data[index].Status = true  */
                 // * Togglen des Statuses von true auf false und false auf true
-                data[index].Status = !data[index].Status
+              /*   data[index].Status = !data[index].Status */
 
                 // * {flag: 'w'}  damit die Datei überschrieben wird und nicht nur angehängt wird
-                fs.writeFile(DB_PATH, JSON.stringify(data, null, 2), { flag: 'w' }, (err) => {
+                fs.writeFile(DB_PATH, JSON.stringify(data, null, 2),/*  { flag: 'w' },  */(err) => {
                     if (err) console.log(err)
                 })
                 res.json(data[index])
