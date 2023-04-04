@@ -1,144 +1,168 @@
 [
   {
-    "SitzplatznummerID": 1,
+    "id": 1,
+    "Sitzplatznummer_ID": 1,
+    "Klasse": "Loge",
+    "Preis": 20,
+    "Status": true
+  },
+  {
+    "id": 2,
+    "Sitzplatznummer_ID": 2,
+    "Klasse": "Loge",
+    "Preis": 20,
+    "Status": true
+  },
+  {
+    "id": 3,
+    "Sitzplatznummer_ID": 3,
+    "Klasse": "Loge",
+    "Preis": 20,
+    "Status": true
+  },
+  {
+    "id": 4,
+    "Sitzplatznummer_ID": 4,
     "Klasse": "Loge",
     "Preis": 20,
     "Status": false
   },
   {
-    "Sitzplatznummer ID": 2,
+    "id": 5,
+    "Sitzplatznummer_ID": 5,
+    "Klasse": "Loge",
+    "Preis": 20,
+    "Status": true
+  },
+  {
+    "id": 6,
+    "Sitzplatznummer_ID": 6,
     "Klasse": "Loge",
     "Preis": 20,
     "Status": false
   },
   {
-    "Sitzplatznummer ID": 3,
+    "id": 7,
+    "Sitzplatznummer_ID": 7,
     "Klasse": "Loge",
     "Preis": 20,
     "Status": false
   },
   {
-    "Sitzplatznummer ID": 4,
+    "id": 8,
+    "Sitzplatznummer_ID": 8,
     "Klasse": "Loge",
     "Preis": 20,
     "Status": false
   },
   {
-    "Sitzplatznummer ID": 5,
+    "id": 9,
+    "Sitzplatznummer_ID": 9,
     "Klasse": "Loge",
     "Preis": 20,
     "Status": false
   },
   {
-    "Sitzplatznummer ID": 6,
+    "id": 10,
+    "Sitzplatznummer_ID": 10,
     "Klasse": "Loge",
     "Preis": 20,
     "Status": false
   },
   {
-    "Sitzplatznummer ID": 7,
+    "id": 11,
+    "Sitzplatznummer_ID": 11,
+    "Klasse": "Loge",
+    "Preis": 20,
+    "Status": true
+  },
+  {
+    "id": 12,
+    "Sitzplatznummer_ID": 12,
     "Klasse": "Loge",
     "Preis": 20,
     "Status": false
   },
   {
-    "Sitzplatznummer ID": 8,
-    "Klasse": "Loge",
-    "Preis": 20,
-    "Status": false
-  },
-  {
-    "Sitzplatznummer ID": 9,
-    "Klasse": "Loge",
-    "Preis": 20,
-    "Status": false
-  },
-  {
-    "Sitzplatznummer ID": 10,
-    "Klasse": "Loge",
-    "Preis": 20,
-    "Status": false
-  },
-  {
-    "Sitzplatznummer ID": 11,
-    "Klasse": "Loge",
-    "Preis": 20,
-    "Status": false
-  },
-  {
-    "Sitzplatznummer ID": 12,
-    "Klasse": "Loge",
-    "Preis": 20,
-    "Status": false
-  },
-  {
-    "Sitzplatznummer ID": 13,
+    "id": 13,
+    "Sitzplatznummer_ID": 13,
     "Klasse": "Parkett",
     "Preis": 10,
     "Status": false
   },
   {
-    "Sitzplatznummer ID": 14,
+    "id": 14,
+    "Sitzplatznummer_ID": 14,
     "Klasse": "Parkett",
     "Preis": 10,
     "Status": false
   },
   {
-    "Sitzplatznummer ID": 15,
+    "id": 15,
+    "Sitzplatznummer_ID": 15,
     "Klasse": "Parkett",
     "Preis": 10,
     "Status": false
   },
   {
-    "Sitzplatznummer ID": 16,
+    "id": 16,
+    "Sitzplatznummer_ID": 16,
     "Klasse": "Parkett",
     "Preis": 10,
     "Status": false
   },
   {
-    "Sitzplatznummer ID": 17,
+    "id": 17,
+    "Sitzplatznummer_ID": 17,
     "Klasse": "Parkett",
     "Preis": 10,
     "Status": false
   },
   {
-    "Sitzplatznummer ID": 18,
+    "id": 18,
+    "Sitzplatznummer_ID": 18,
     "Klasse": "Parkett",
     "Preis": 10,
     "Status": false
   },
   {
-    "Sitzplatznummer ID": 19,
+    "id": 19,
+    "Sitzplatznummer_ID": 19,
     "Klasse": "Parkett",
     "Preis": 10,
     "Status": false
   },
   {
-    "Sitzplatznummer ID": 20,
+    "id": 20,
+    "Sitzplatznummer_ID": 20,
     "Klasse": "Parkett",
     "Preis": 10,
     "Status": false
   },
   {
-    "Sitzplatznummer ID": 21,
+    "id": 21,
+    "Sitzplatznummer_ID": 21,
     "Klasse": "Parkett",
     "Preis": 10,
     "Status": false
   },
   {
-    "Sitzplatznummer ID": 22,
+    "id": 22,
+    "Sitzplatznummer_ID": 22,
     "Klasse": "Parkett",
     "Preis": 10,
     "Status": false
   },
   {
-    "Sitzplatznummer ID": 23,
+    "id": 23,
+    "Sitzplatznummer_ID": 23,
     "Klasse": "Parkett",
     "Preis": 10,
     "Status": false
   },
   {
-    "Sitzplatznummer ID": 24,
+    "id": 24,
+    "Sitzplatznummer_ID": 24,
     "Klasse": "Parkett",
     "Preis": 10,
     "Status": false
@@ -148,13 +172,13 @@
     "Sitzplatznummer_ID": 25,
     "Klasse": "Parkett",
     "Preis": 10,
-    "Status": true
+    "Status": false
   },
   {
     "id": 26,
     "Sitzplatznummer_ID": 26,
     "Klasse": "Parkett",
     "Preis": 10,
-    "Status": true
+    "Status": false
   }
 ]
