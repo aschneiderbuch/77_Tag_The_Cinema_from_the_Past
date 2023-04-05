@@ -1,5 +1,6 @@
 {
-  "homepage": "http://aschneiderbuch.github.io/77_Tag_The_Cinema_from_the_Past",
+  
+  "homepage": "https://kino-frontend.onrender.com/",
   "name": "react-app",
   "version": "0.1.0",
   "private": true,
@@ -23,7 +24,7 @@
     "deploy": "gh-pages -d build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "serve": "npx serve -s ./dist"
+    "serve": "npx serve -s ./build"
   },
   "eslintConfig": {
     "extends": [

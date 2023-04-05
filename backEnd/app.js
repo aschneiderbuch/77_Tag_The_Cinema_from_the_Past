@@ -19,6 +19,10 @@ import nodemailer from 'nodemailer' // zum senden von Emails
 import { loadFile, saveFile, appendFile } from './funktionen.js';
 
 
+/// !
+// ! "serve": "npx serve -s ./build"
+// ! vite =>     "serve": "npx serve -s ./dist"
+
 
 
 /** ****************************************************************
@@ -89,6 +93,7 @@ const transport = nodemailer.createTransport({
 app.use(morgan('dev'))
 
 // **** CORS Sicherheit
+// ! hier kann auch nach origin ein Array als Whitelist rein
 app.use(cors(  /* { origin: `http://localhost:${PORT_FRONTEND_REACT}` }  */ ))  // https://kino-frontend.onrender.com/      http://localhost:
 
 // **** React HEAD BODY JSON Parser
